@@ -11,7 +11,7 @@ STRING_ALERT_ACTIVATED: str = "#Python is the best programming language"
 
 
 class TweetStreamListener(StreamListener):
-    """Class to liste stream Twitter data."""
+    """Class to stream Twitter data."""
 
     def on_data(self, data: str) -> None:
         """Raw data received from Twitter.

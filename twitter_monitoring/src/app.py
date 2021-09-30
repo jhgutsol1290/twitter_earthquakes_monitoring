@@ -1,4 +1,4 @@
-"""Lamnda handler of incoming twitter events."""
+"""Handler of incoming twitter events."""
 import os
 
 from tweepy import Stream
