@@ -1,4 +1,4 @@
-# Mexico City Eartquakes Twitter Monitoring
+# Mexico City Earthquakes Twitter Monitoring
 
 Monitoring for earthquakes events that the SASMEX Twitter account tweets.
 
