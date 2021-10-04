@@ -1,8 +1,9 @@
 """AWS Utils."""
+import os
 import boto3
 
-DYNAMODB_TABLE: str = "TestingTable"
-REGION: str = "us-east-1"
+DYNAMODB_TABLE: str = os.getenv("TABLE", "TestingTable")
+REGION: str = os.getenv("REGION", "us-east-1")
 
 dynamodb_client = boto3.resource("dynamodb", region_name=REGION)
 

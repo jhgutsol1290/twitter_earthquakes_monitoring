@@ -6,7 +6,7 @@ from aws_utils.dynamodb import upload_to_dynamodb
 from tweepy.streaming import StreamListener
 
 STRING_ALERT_NOT_ACTIVATED: str = "NO AMERITÓ ALERTA SÍSMICA"
-# STRING_ALERT_ACTIVATED = "#TenemosSismo, se activó la #AlertaSismica"
+# STRING_ALERT_ACTIVATED: str = "#TenemosSismo, se activó la #AlertaSismica"
 STRING_ALERT_ACTIVATED: str = "#Python is the best programming language"
 
 
@@ -48,6 +48,8 @@ class TweetStreamListener(StreamListener):
             upload_to_dynamodb(
                 tweet=self.format_tweet(tweet=tweet, tweet_text=tweet_text)
             )
+        else:
+            print("Tweet doesn't match the expected pattern.")
 
     @staticmethod
     def format_tweet(tweet: Dict, tweet_text: str) -> Dict:

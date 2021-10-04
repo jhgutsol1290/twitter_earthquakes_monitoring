@@ -59,6 +59,7 @@ class TestTwitterAuth(unittest.TestCase):
         with self.assertRaises(TwitterInvalidCredentialsException) as ctx:
             create_api()
 
+        self.assertTrue("Invalid credentials.", str(ctx.exception))
         mock_twitter_auth.assert_called_once()
         mock_API.assert_called_once()
 
