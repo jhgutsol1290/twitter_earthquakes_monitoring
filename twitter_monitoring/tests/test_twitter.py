@@ -23,7 +23,7 @@ tweet = {
     "created_at": "Wed Oct 10 20:19:24 +0000 2018",
     "id": "1050118621198921728",
     "id_str": "1050118621198921728",
-    "text": "Testing tweet text",
+    "text": "Testing str tweet text",
     "user": {"screen_name": "Testing screen name"},
     "entities": {},
     "retweeted": False,
@@ -113,13 +113,15 @@ class TestStreamTwitterData(unittest.TestCase):
         )
         mock_upload_to_dynamodb.assert_called_once()
 
+    @patch("twitter.stream_twitter_data.STRING_ALERT_ACTIVATED", "Testing str")
     def test_format_tweet(self):
         """Testing format tweet."""
         expected_tweet = {
-            "tweet_text": "Testing tweet text",
+            "tweet_text": "Testing str tweet text",
             "id_str": "1050118621198921728",
             "user_screen_name": "Testing screen name",
             "created_at": "Wed Oct 10 20:19:24 +0000 2018",
+            "alert_activated": True
         }
         formatted_tweet = TweetStreamListener().format_tweet(
             tweet=self.data, tweet_text=self.data["text"]
