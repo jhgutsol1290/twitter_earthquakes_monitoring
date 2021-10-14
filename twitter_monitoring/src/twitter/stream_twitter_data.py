@@ -64,5 +64,5 @@ class TweetStreamListener(StreamListener):
             "id_str": tweet.get("id_str"),
             "user_screen_name": tweet.get("user", {}).get("screen_name", None),
             "created_at": tweet.get("created_at"),
-            "alert_activated": STRING_ALERT_ACTIVATED in tweet_text
+            "alert_activated": STRING_ALERT_ACTIVATED in tweet_text,
         }

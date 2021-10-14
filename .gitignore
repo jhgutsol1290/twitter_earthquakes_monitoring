@@ -4,3 +4,7 @@ venv
 .python-version
 __pycache__/
 .DS_Store
+
+# Terraform
+*.terraform*
+lambda_zip/
